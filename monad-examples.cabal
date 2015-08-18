@@ -27,3 +27,10 @@ executable stm-example
                        stm >=2.4.4 && <2.5
   hs-source-dirs:      stm-example
   default-language:    Haskell2010
+
+executable shake-example
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.9,
+                       shake >=0.15.5 && <0.16
+  hs-source-dirs:      shake-example
+  default-language:    Haskell2010

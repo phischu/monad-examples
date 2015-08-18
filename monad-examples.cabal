@@ -15,10 +15,15 @@ cabal-version:       >=1.10
 
 executable st-example
   main-is:             Main.hs
-  -- other-modules:       
-  -- other-extensions:    
   build-depends:       base >=4.7 && <4.9,
-                       vector,
-                       loop
+                       vector >=0.11.0.0 && <0.12,
+                       loop >=0.2.0 && <0.3
   hs-source-dirs:      st-example
+  default-language:    Haskell2010
+
+executable stm-example
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.9,
+                       stm >=2.4.4 && <2.5
+  hs-source-dirs:      stm-example
   default-language:    Haskell2010

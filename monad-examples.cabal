@@ -34,3 +34,11 @@ executable shake-example
                        shake >=0.15.2 && <0.16
   hs-source-dirs:      shake-example
   default-language:    Haskell2010
+
+executable resourcet-example
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.9,
+                       resourcet >=1.1.6 && <1.2,
+                       sqlite-simple >=0.4.9.0 && <0.5
+  hs-source-dirs:      resourcet-example
+  default-language:    Haskell2010

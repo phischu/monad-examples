@@ -1,0 +1,5 @@
+.cabal-sandbox
+.shake
+.stack-work
+cabal.sandbox.config
+dist

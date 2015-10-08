@@ -3,11 +3,9 @@ module Main where
 import Prelude hiding (
     length)
 import Data.Vector.Unboxed (
-    Vector, create, (!), length, fromList)
+    Vector, create, (!), length, fromList, forM_)
 import Data.Vector.Unboxed.Mutable (
     MVector, new, modify)
-import Control.Loop (
-    numLoop)
 import Control.Monad.ST (
     ST)
 import Data.Word (
@@ -19,8 +17,7 @@ histogram vector = create (histogramST vector)
 histogramST :: Vector Word8 -> ST s (MVector s Int)
 histogramST vector = do
     resultVector <- new 256
-    numLoop 0 (length vector - 1) (\i -> do
-        let value = vector ! i
+    forM_ vector (\value -> do
         modify resultVector (+1) (fromIntegral value))
     return resultVector
 

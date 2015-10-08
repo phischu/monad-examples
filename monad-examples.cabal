@@ -16,8 +16,7 @@ cabal-version:       >=1.10
 executable st-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <4.9,
-                       vector >=0.11.0.0 && <0.12,
-                       loop >=0.2.0 && <0.3
+                       vector >=0.11.0.0 && <0.12
   hs-source-dirs:      st-example
   default-language:    Haskell2010
 

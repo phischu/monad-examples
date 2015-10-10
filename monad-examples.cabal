@@ -47,3 +47,12 @@ executable distribution-example
                        probability >=0.2.5 && <0.3
   hs-source-dirs:      distribution-example
   default-language:    Haskell2010
+
+executable pipe-example
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.9,
+                       pipes >=4.1.6 && <4.2,
+                       text >=1.2.1.3 && <1.3,
+                       containers >=0.5.5.1 && <0.6
+  hs-source-dirs:      pipe-example
+  default-language:    Haskell2010

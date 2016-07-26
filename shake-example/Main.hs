@@ -3,16 +3,18 @@ module Main where
 
 import Development.Shake (
     Rules, Action, shakeArgs, shakeOptions,
-    action,
+    want, (%>),
     readFileLines, readFile', writeFile')
 import Control.Monad (
     forM)
 
 
-sumRules :: Rules ()
-sumRules = do
+rules :: Rules ()
+rules = do
 
-  action sumAction
+  want ["shake-data/sum"]
+
+  "shake-data/sum" %> (\_ -> sumAction)
 
 
 sumAction :: Action ()
@@ -26,6 +28,6 @@ sumAction = do
 
 
 main :: IO ()
-main = shakeArgs shakeOptions sumRules
+main = shakeArgs shakeOptions rules
 
 

@@ -32,10 +32,6 @@ executable shake-example
   build-depends:       base >=4.7 && <4.9,
                        shake >=0.15.2 && <0.16
   hs-source-dirs:      shake-example
-  data-files:          shake-data/filenames
-                       shake-data/file1
-                       shake-data/file2
-                       shake-data/file3
   default-language:    Haskell2010
 
 executable resourcet-example
@@ -60,4 +56,12 @@ executable pipe-example
                        text >=1.2.1.3 && <1.3,
                        containers >=0.5.5.1 && <0.6
   hs-source-dirs:      pipe-example
+  default-language:    Haskell2010
+
+executable process-example
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.9,
+                       distributed-process >=0.6.4 && <0.7,
+                       distributed-process-simplelocalnet >=0.2.3.2 && <0.3
+  hs-source-dirs:      process-example
   default-language:    Haskell2010

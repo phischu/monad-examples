@@ -1,5 +1,6 @@
 module Main where
 
+
 import Development.Shake (
     Rules, Action, shakeArgs, shakeOptions,
     action,
@@ -7,22 +8,24 @@ import Development.Shake (
 import Control.Monad (
     forM)
 
+
 sumRules :: Rules ()
-sumRules = action sumAction
+sumRules = do
+
+  action sumAction
 
 
 sumAction :: Action ()
 sumAction = do
 
-    summandFilePaths <- readFileLines "summands"
+  filePaths <- readFileLines "shake-data/filenames"
 
-    summandStrings <- forM summandFilePaths readFile'
+  fileContents <- forM filePaths readFile'
 
-    let summands = map read summandStrings :: [Integer]
-        sumString = show (sum summands)
-
-    writeFile' "sum" sumString
+  writeFile' "shake-data/sum" (show (sum (map length fileContents)))
 
 
 main :: IO ()
 main = shakeArgs shakeOptions sumRules
+
+

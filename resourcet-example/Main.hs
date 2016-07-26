@@ -25,35 +25,17 @@ allocateFile filename ioMode = allocate openAction closeAction where
     hClose handle
 
 
-askForFile :: ResIO Handle
-askForFile = do
+main :: IO ()
+main = runResourceT (do
 
   liftIO (putStrLn "Enter filename:")
   filename <- liftIO getLine
 
   (_, handle) <- allocateFile filename AppendMode
-  return handle
 
-
-loop :: Handle -> ResIO ()
-loop handle = do
-
-  liftIO (putStrLn "Appending to file. Enter stop to stop:")
+  liftIO (putStrLn "Enter string to append:")
   userInput <- liftIO getLine
 
-  case userInput of
-
-    "stop" -> do
-      return ()
-
-    _ -> do
-      liftIO (hPutStrLn handle userInput)
-      liftIO (hFlush handle)
-      loop handle
-
-
-main :: IO ()
-main = runResourceT (do
-  handle <- askForFile
-  loop handle)
+  liftIO (hPutStrLn handle userInput)
+  liftIO (hFlush handle))
 

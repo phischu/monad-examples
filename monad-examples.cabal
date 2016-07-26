@@ -37,7 +37,8 @@ executable shake-example
 executable resourcet-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <4.9,
-                       resourcet >=1.1.6 && <1.2
+                       resourcet >=1.1.6 && <1.2,
+                       transformers >=0.3.0.0 && <0.4
   hs-source-dirs:      resourcet-example
   default-language:    Haskell2010
 

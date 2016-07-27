@@ -15,5 +15,5 @@ We currently feature:
 - [ ] [Logic](https://hackage.haskell.org/package/logict-0.6.0.2/docs/Control-Monad-Logic.html#t:Logic): Backtracking search.
 - [ ] [Spec](https://hackage.haskell.org/package/hspec-core-2.2.3/docs/Test-Hspec-Core-Spec.html#t:Spec): Test specification.
 - [ ] [Par](https://hackage.haskell.org/package/monad-par-0.3.4.8/docs/Control-Monad-Par.html#t:Par): Parallel programming.
-- [ ] [Parser](https://hackage.haskell.org/package/attoparsec-0.13.0.2/docs/Data-Attoparsec-ByteString.html#t:Parser): Parse binary data
-
+- [ ] [Parser](https://hackage.haskell.org/package/attoparsec-0.13.0.2/docs/Data-Attoparsec-ByteString.html#t:Parser): Parse binary data.
+- [ ] [Canvas](https://hackage.haskell.org/package/blank-canvas-0.6/docs/Graphics-Blank.html#t:Canvas): Draw on HTML 5 Canvas.

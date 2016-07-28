@@ -73,3 +73,13 @@ executable scotty-example
                        text >=1.2.1.3 && <1.3
   hs-source-dirs:      scotty-example
   default-language:    Haskell2010
+
+executable relation-example
+  main-is:             Main.hs
+  other-modules:       Person,
+                       Pet
+  build-depends:       base >=4.7 && <4.9,
+                       relational-query >=0.8.3.0 && <0.9
+  hs-source-dirs:      relation-example
+  default-language:    Haskell2010
+

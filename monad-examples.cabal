@@ -83,3 +83,10 @@ executable relation-example
   hs-source-dirs:      relation-example
   default-language:    Haskell2010
 
+executable logic-example
+  main-is:             Main.hs
+  build-depends:       base >=4.7 && <4.9,
+                       logict >=0.6.0.2 && <0.7
+  hs-source-dirs:      logic-example
+  default-language:    Haskell2010
+

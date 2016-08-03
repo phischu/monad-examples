@@ -2,5 +2,5 @@ flags: {}
 packages:
 - '.'
 extra-deps:
-- vector-0.11.0.0
-resolver: lts-3.0
+- probability-0.2.5
+resolver: lts-6.10

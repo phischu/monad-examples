@@ -5,32 +5,32 @@ import Numeric.Probability.Distribution (
   T, uniform, norm, pretty)
 
 
-type Distribution a = T Rational a
+type Probability a = T Rational a
 
 
-sixSided :: Distribution Int
+sixSided :: Probability Int
 sixSided = uniform [1..6]
 
 
-twentySided :: Distribution Int
+twentySided :: Probability Int
 twentySided = uniform [1..20]
 
 
-youRoll :: Distribution Int
+youRoll :: Probability Int
 youRoll = norm (do
   firstRoll <- sixSided
   secondRoll <- sixSided
   return (firstRoll + secondRoll + 5))
 
 
-enemyRolls :: Distribution Int
+enemyRolls :: Probability Int
 enemyRolls = norm (do
   firstRoll <- twentySided
   secondRoll <- twentySided
   return (max firstRoll secondRoll))
 
 
-youWin :: Distribution Bool
+youWin :: Probability Bool
 youWin = norm (do
   yourScore <- youRoll
   enemyScore <- enemyRolls

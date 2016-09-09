@@ -1,7 +1,35 @@
-# monad-examples
-Example uses of monads
+# Example uses of monads
 
-We currently feature:
+What are monads and why should I care? This repository answers this question by showcasing a selection of examples.
+
+## Installation
+
+Tested with cabal-install-1.24, GHC 7.8, 7.10, 8.0 and stackage lts-6.16 on Ubuntu 16.04.
+
+Install with cabal
+
+```
+git clone https://github.com/phischu/monad-examples
+cd monad-examples
+cabal sandbox init
+cabal install
+cabal configure
+cabal build
+```
+
+or with stack
+
+```
+git clone https://github.com/phischu/monad-examples
+cd monad-examples
+stack install
+```
+
+Installation may take a while.
+
+## Featured
+
+The ticked examples are camera-ready. The others are in progress.
 
 - [x] [STM](https://hackage.haskell.org/package/stm/docs/Control-Monad-STM.html#t:STM): Software transactional memory for concurrency.
 - [ ] [Resource](https://hackage.haskell.org/package/resourcet/docs/Control-Monad-Trans-Resource.html#t:ResourceT): Automatic resource management.

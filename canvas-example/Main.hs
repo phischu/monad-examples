@@ -1,3 +1,11 @@
+{-| This example is taken from
+    <http://corehtml5canvas.com/code-live/ch02/example-2.22/example.html>
+
+    The server translates the program to javascript calls to the HTML5 canvas
+    API and transmits them to the client.
+
+    You can abstract over drawing instructions within Haskell.
+-}
 {-# language OverloadedStrings #-}
 module Main where
 
@@ -10,6 +18,7 @@ import Graphics.Blank (
   beginPath, moveTo, quadraticCurveTo, stroke)
 
 
+-- | Translation of <http://corehtml5canvas.com/code-live/ch02/example-2.22/example.html>.
 canvas :: Canvas ()
 canvas = do
 
@@ -32,7 +41,8 @@ canvas = do
   stroke()
 
 
+-- | Start a server on port 3000 that will send clients the instructions to draw
+-- the example.
 main :: IO ()
 main = blankCanvas 3000 (\context -> send context canvas)
-
 

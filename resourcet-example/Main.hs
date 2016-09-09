@@ -1,3 +1,7 @@
+{-| We ask the user for a filename. We open that file and ask the user for some input.
+    We append the given input to the file. We want to be sure that we close the file
+    no matter what happens.
+-}
 module Main where
 
 
@@ -14,7 +18,7 @@ import Control.Monad.IO.Class (
 
 
 allocateFile :: FilePath -> IOMode -> ResIO (ReleaseKey, Handle)
-allocateFile filename ioMode = allocate openAction closeAction where
+allocateFile filename ioMode = let
 
   openAction = do
     putStrLn ("Opening " ++ filename)
@@ -24,18 +28,24 @@ allocateFile filename ioMode = allocate openAction closeAction where
     putStrLn ("Closing " ++ filename)
     hClose handle
 
+  in allocate openAction closeAction
+
 
 main :: IO ()
 main = runResourceT (do
 
-  liftIO (putStrLn "Enter filename:")
-  filename <- liftIO getLine
+  filename <- liftIO (do
+
+    putStrLn "Enter filename:"
+    getLine)
 
   (_, handle) <- allocateFile filename AppendMode
 
-  liftIO (putStrLn "Enter string to append:")
-  userInput <- liftIO getLine
+  liftIO (do
 
-  liftIO (hPutStrLn handle userInput)
-  liftIO (hFlush handle))
+    putStrLn "Enter string to append:"
+    userInput <- getLine
+
+    hPutStrLn handle userInput
+    hFlush handle))
 

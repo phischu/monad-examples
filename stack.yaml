@@ -2,5 +2,5 @@ flags: {}
 packages:
 - '.'
 extra-deps:
-- probability-0.2.5
+- probability-0.2.5.1
 resolver: lts-6.16

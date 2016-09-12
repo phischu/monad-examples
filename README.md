@@ -2,6 +2,8 @@
 
 What are monads and why should I care? This repository answers this question by showcasing a selection of examples.
 
+Each example is in a `...-example` subfolder. For example the example for software transactional memory (STM) is in [`stm-example/Main.hs`](stm-example/Main.hs).
+
 ## Installation
 
 Tested with cabal-install-1.24, GHC 7.8, 7.10, 8.0 and stackage lts-6.16 on Ubuntu 16.04.

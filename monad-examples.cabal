@@ -26,6 +26,7 @@ executable stm-example
                        stm >=2.4.4 && <2.5
   hs-source-dirs:      stm-example
   default-language:    Haskell2010
+  ghc-options:         -threaded
 
 executable shake-example
   main-is:             Main.hs

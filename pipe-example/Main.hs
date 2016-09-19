@@ -2,7 +2,8 @@
     (the sender), the message content and a time stamp. We want to
     limit the number of messages to at most one message per three seconds.
 
-    Add a pipe that filters messages from a user with a given user name.
+    Add a pipe that blacklists a user with a given user name. It should drop
+    all messages from that user.
     Compose it either before or after rate limiting and observe the result.
 -}
 {-# LANGUAGE OverloadedStrings #-}

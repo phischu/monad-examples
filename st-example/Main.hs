@@ -18,7 +18,7 @@ import qualified Data.Vector.Unboxed as Vector (
 import Data.Vector.Unboxed.Mutable (
   MVector)
 import qualified Data.Vector.Unboxed.Mutable as MVector (
-  new, modify)
+  new, set, modify)
 import Control.Monad.ST (
   ST)
 import Data.Word (
@@ -31,11 +31,15 @@ histogram :: Vector Word8 -> Vector Int
 histogram vector = Vector.create (histogramST vector)
 
 
--- | This histogram function uses explicit allocation and destructive updates.
+-- | In tis histogram function we use explicit allocation and destructive updates.
+-- We fill the result vector with zeroes and then destructively modify it in a
+-- loop.
 histogramST :: Vector Word8 -> ST s (MVector s Int)
 histogramST vector = do
 
   resultVector <- MVector.new 256
+
+  MVector.set resultVector 0
 
   Vector.forM_ vector (\value -> do
 
@@ -44,7 +48,7 @@ histogramST vector = do
   return resultVector
 
 
--- | Print the histogram of the vector [5,6,2,8,8].
+-- | We print the histogram of the vector [5,6,2,8,8].
 main :: IO ()
 main = do
   print (histogram (Vector.fromList [5,6,2,8,8]))

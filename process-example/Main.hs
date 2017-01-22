@@ -1,50 +1,69 @@
+{-# LANGUAGE StaticPointers, DeriveGeneric, DeriveAnyClass #-}
 module Main where
 
 
 import Control.Distributed.Process (
-  Process, NodeId, spawnLocal, getSelfPid,
-  register, whereisRemoteAsync, WhereIsReply(WhereIsReply),
-  expect, say)
+  Process, NodeId, ProcessId, Static,
+  getSelfPid, say, spawn, send, expect)
 import Control.Distributed.Process.Node (
-  runProcess, initRemoteTable)
+  initRemoteTable)
 import Control.Distributed.Process.Backend.SimpleLocalnet (
-  initializeBackend, Backend(newLocalNode, findPeers))
+  initializeBackend, startMaster, startSlave)
+import Control.Distributed.Static (
+  staticPtr, staticClosure)
+import Data.Binary (
+  Binary)
+import GHC.Generics (
+  Generic)
 
 import System.Environment (
   getArgs)
 import Control.Monad (
-  forever, forM_)
+  forever, forM)
 
 
-master :: Backend -> IO ()
-master backend = do
-  nodes <- findPeers backend 1000000
-  localNode <- newLocalNode backend
-  runProcess localNode (masterProcess nodes)
+data CheckNumber = CheckNumber ProcessId Integer
+  deriving (Generic, Binary)
+
+data CheckResult = CheckResult ProcessId Integer
+  deriving (Generic, Binary)
 
 
 masterProcess :: [NodeId] -> Process ()
-masterProcess nodeIDs = do
-  forM_ nodeIDs (\nodeID -> whereisRemoteAsync nodeID "worker")
-  WhereIsReply name pid <- expect
-  say name
-  say (show pid)
-  return ()
+masterProcess nodeIds = do
+
+  say (show (length nodeIds))
+
+  workerIds <- forM nodeIds (\nodeId ->
+    spawn nodeId (staticClosure staticWorkerProcess))
+
+  masterId <- getSelfPid
+
+  let workItems = map (CheckNumber masterId) [1..]
+
+  forM (zip workerIds workItems) (\(workerId, workItem) -> do
+    send workerId workItem)
+
+  masterLoop (drop (length workerIds) workItems)
 
 
-worker :: Backend -> IO ()
-worker backend = do
-  localNode <- newLocalNode backend
-  runProcess localNode workerProcess
+masterLoop :: [CheckNumber] -> Process ()
+masterLoop (workItem : workItems) = do
+  CheckResult workerId number <- expect
+  say (show number)
+  send workerId workItem
+  masterLoop workItems
 
 
 workerProcess :: Process ()
-workerProcess = do
-  workerID <- getSelfPid
-  register "worker" workerID
-  forever (do
-    () <- expect
-    return ())
+workerProcess = forever (do
+  workerId <- getSelfPid
+  CheckNumber masterId number <- expect
+  send masterId (CheckResult workerId number))
+
+
+staticWorkerProcess :: Static (Process ())
+staticWorkerProcess = staticPtr (static workerProcess)
 
 
 main :: IO ()
@@ -55,6 +74,6 @@ main = do
   backend <- initializeBackend host port initRemoteTable
 
   case role of
-    "master" -> master backend
-    "worker" -> worker backend
+    "master" -> startMaster backend masterProcess
+    "slave" -> startSlave backend
 

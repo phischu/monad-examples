@@ -6,7 +6,7 @@ Each example is in a `...-example` subfolder. For example the example for softwa
 
 ## Installation
 
-Tested with cabal-install-1.24, GHC 7.8, 7.10, 8.0 and stackage lts-6.16 on Ubuntu 16.04.
+Tested with cabal-install-1.24, GHC 7.10, 8.0 and stackage lts-6.16 on Ubuntu 16.04.
 
 Install with cabal
 
@@ -27,8 +27,6 @@ cd monad-examples
 stack install
 ```
 
-Installation may take a while.
-
 ## Featured
 
 The ticked examples are camera-ready. The others are in progress.
@@ -46,3 +44,5 @@ The ticked examples are camera-ready. The others are in progress.
 - [x] [Spec](https://hackage.haskell.org/package/hspec-core/docs/Test-Hspec-Core-Spec.html#t:Spec): Test specification.
 - [x] [Parser](https://hackage.haskell.org/package/attoparsec/docs/Data-Attoparsec-ByteString.html#t:Parser): Parse binary and textual data.
 - [x] [Canvas](https://hackage.haskell.org/package/blank-canvas/docs/Graphics-Blank.html#t:Canvas): Draw on HTML 5 Canvas.
+
+Contributions welcome!

@@ -25,7 +25,7 @@ saltFormula = "NaCl"
 
 -- | The formula for helium gas.
 heliumFormula :: Text
-heliumFormula = "He2"
+heliumFormula = "He"
 
 
 -- | A chemical formula is a list of pairs of an element and its number of occurences.

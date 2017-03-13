@@ -4,6 +4,8 @@ What are monads and why should I care? This repository answers this question by 
 
 Each example is in a `...-example` subfolder. For example the example for software transactional memory (STM) is in [`stm-example/Main.hs`](stm-example/Main.hs).
 
+See also my [related blog post](https://haskellexists.blogspot.com/2017/02/ten-example-uses-of-monads.html).
+
 ## Installation
 
 Tested with cabal-install-1.24, GHC 7.10, 8.0 and stackage lts-6.16 on Ubuntu 16.04.

@@ -12,18 +12,22 @@ category:            Example
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
+data-files:          shake-data/file1,
+                     shake-data/file2,
+                     shake-data/file3,
+                     shake-data/filenames
 
 executable st-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <5.0,
-                       vector >=0.11.0.0 && <0.12
+                       vector >=0.11.0.0 && <0.13
   hs-source-dirs:      st-example
   default-language:    Haskell2010
 
 executable stm-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <5.0,
-                       stm >=2.4.4 && <2.5
+                       stm >=2.4.4 && <2.6
   hs-source-dirs:      stm-example
   default-language:    Haskell2010
   ghc-options:         -threaded
@@ -31,18 +35,14 @@ executable stm-example
 executable shake-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <5.0,
-                       shake >=0.15.2 && <0.16
+                       shake >=0.15.2 && <0.17
   hs-source-dirs:      shake-example
-  data-files:          shake-data/file1,
-                       shake-data/file2,
-                       shake-data/file3,
-                       shake-data/filenames
   default-language:    Haskell2010
 
 executable resourcet-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <5.0,
-                       resourcet >=1.1.6 && <1.2,
+                       resourcet >=1.1.6 && <1.3,
                        transformers >=0.3.0.0 && <0.6
   hs-source-dirs:      resourcet-example
   default-language:    Haskell2010
@@ -57,7 +57,7 @@ executable probability-example
 executable pipe-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <5.0,
-                       pipes >=4.1.6 && <4.2,
+                       pipes >=4.1.6 && <4.4,
                        text >=1.2.1.3 && <1.3,
                        containers >=0.5.5.1 && <0.6
   hs-source-dirs:      pipe-example
@@ -67,7 +67,7 @@ executable process-example
   main-is:             Main.hs
   default-language:    Haskell2010
   build-depends:       base >=4.7 && <5.0
-  build-depends:       distributed-process >=0.6.4 && <0.7,
+  build-depends:       distributed-process >=0.6.4 && <0.8,
                        distributed-process-simplelocalnet >=0.2.3.2 && <0.7,
                        distributed-static >=0.3.5 && <0.4,
                        binary >=0.7.5.0 && <0.9
@@ -86,7 +86,7 @@ executable relation-example
   other-modules:       Person,
                        Pet
   build-depends:       base >=4.7 && <5.0,
-                       relational-query >=0.8.3.0 && <0.9
+                       relational-query >=0.8.3.0 && <0.13
   hs-source-dirs:      relation-example
   default-language:    Haskell2010
 
@@ -100,8 +100,8 @@ executable logic-example
 executable spec-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <5.0,
-                       hspec >=2.2.3 && <2.3,
-                       QuickCheck >=2.8.2 && <2.10
+                       hspec >=2.2.3 && <2.6,
+                       QuickCheck >=2.8.2 && <2.12
   hs-source-dirs:      spec-example
   default-language:    Haskell2010
 

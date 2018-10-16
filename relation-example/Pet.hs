@@ -1,7 +1,7 @@
 module Pet where
 
 
-import Database.Relational.Query.Table (
+import Database.Relational.Table (
   Table, table)
 
 import Data.Int (

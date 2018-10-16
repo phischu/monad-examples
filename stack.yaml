@@ -1,6 +1,7 @@
-flags: {}
-packages:
-- '.'
+resolver: lts-12.13
+
 extra-deps:
-- probability-0.2.5.1
-resolver: lts-6.16
+- distributed-process-0.7.4
+- network-transport-tcp-0.6.0
+- distributed-process-simplelocalnet-0.2.4
+- network-multicast-0.2.0

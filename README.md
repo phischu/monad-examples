@@ -8,7 +8,7 @@ See also my [related blog post](https://haskellexists.blogspot.com/2017/02/ten-e
 
 ## Installation
 
-Tested with cabal-install-1.24, GHC 7.10, 8.0 and stackage lts-6.16 on Ubuntu 16.04.
+Tested with cabal-install-2.2, GHC 8.2 and GHC 8.4 and Stackage lts-12.13 on Ubuntu 16.04.
 
 Install with cabal
 

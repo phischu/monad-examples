@@ -2,7 +2,7 @@
 module Main where
 
 
-import Database.Relational.Query (
+import Database.Relational (
   Relation, relation,
   table,
   query, (><))

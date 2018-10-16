@@ -34,7 +34,6 @@ stack install
 The ticked examples are camera-ready. The others are in progress.
 
 - [x] [STM](https://hackage.haskell.org/package/stm/docs/Control-Monad-STM.html#t:STM): Software transactional memory for concurrency.
-- [ ] [Resource](https://hackage.haskell.org/package/resourcet/docs/Control-Monad-Trans-Resource.html#t:ResourceT): Automatic resource management.
 - [x] [(Build) Action](https://hackage.haskell.org/package/shake/docs/Development-Shake.html#t:Action): GNU make embedded in Haskell.
 - [x] [Pipe](https://hackage.haskell.org/package/pipes/docs/Pipes.html#t:Pipe): Stream processing.
 - [ ] [Process](https://hackage.haskell.org/package/distributed-process/docs/Control-Distributed-Process.html#t:Process): Distributed programming.

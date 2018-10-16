@@ -39,14 +39,6 @@ executable shake-example
   hs-source-dirs:      shake-example
   default-language:    Haskell2010
 
-executable resourcet-example
-  main-is:             Main.hs
-  build-depends:       base >=4.7 && <5.0,
-                       resourcet >=1.1.6 && <1.3,
-                       transformers >=0.3.0.0 && <0.6
-  hs-source-dirs:      resourcet-example
-  default-language:    Haskell2010
-
 executable probability-example
   main-is:             Main.hs
   default-language:    Haskell2010

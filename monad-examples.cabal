@@ -62,7 +62,10 @@ executable process-example
   build-depends:       distributed-process >=0.6.4 && <0.8,
                        distributed-process-simplelocalnet >=0.2.3.2 && <0.7,
                        distributed-static >=0.3.5 && <0.4,
-                       binary >=0.7.5.0 && <0.9
+                       binary >=0.7.5.0 && <0.9,
+                       bytestring >=0.10.8.2 && <0.11,
+                       base16-bytestring >= 0.1.1.6 && <0.2,
+                       cryptohash-sha256 >= 0.11.101.0 && <0.12
   hs-source-dirs:      process-example
 
 executable scotty-example

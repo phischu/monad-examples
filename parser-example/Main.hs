@@ -78,7 +78,7 @@ specificElementParser elementText element = do
   return element
 
 
--- | We print the results of parsing three example.
+-- | We print the results of parsing three example strings.
 main :: IO ()
 main = do
   print (parseOnly chemicalFormulaParser waterFormula)

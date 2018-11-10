@@ -1,10 +1,10 @@
 {-| We solve the four fours problem.
     <https://en.wikipedia.org/wiki/Four_fours>
 
-    We generate expressions out of 4s and the binary operations add, subtract,
-    multiply and divide.
+    We generate expressions out of the binary operations add, subtract,
+    multiply and divide and the number 4.
 
-    You can extend this to also allow concatenation i.e. 44.
+    You can extend this to also allow concatenation i.e. 44, 444 and 4444.
 -}
 module Main where
 

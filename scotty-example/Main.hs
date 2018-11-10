@@ -1,8 +1,8 @@
-{-| A web service for ALLCAPS. If you request \/allcaps\/kitten you get KITTEN
-    as a response.
+{-| A web service for ALLCAPS. If you request for example \/allcaps\/kitten you
+    get KITTEN as a response.
 
-    Extend the server so that if someone actually requests \/allcaps\/kitten you
-    respond with status 404 and body text @Not found@. You will need the 'status'
+    Extend the server so that if someone requests \/allcaps\/kitten you respond
+    with status 404 and body text @Not found@ instead. You will need the 'status'
     function for that.
 -}
 {-# LANGUAGE OverloadedStrings #-}

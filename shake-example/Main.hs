@@ -1,9 +1,9 @@
-{-| We have file named filenames that contains a newline-delimited list of
+{-| We have a file named filenames that contains a newline-delimited list of
     filenames. We want to count the total number of lines in all listed files
     and write that count to a file named linecount. If we rerun we want to
     avoid any unnecessary work.
 
-    You could try adding *.count files that remember the line counts of
+    You could add *.count files that remember the line counts of
     individual files.
 -}
 module Main where

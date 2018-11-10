@@ -40,8 +40,8 @@ rateLimit = do
   rateLimitLoop message
 
 
--- | Given the previous message await the new message and compare their
--- timestamps. If only yield the new message if the difference between
+-- | Given the previous message, await the new message and compare their
+-- timestamps. Don't yield the new message unless the difference between
 -- their timestamps is larger than 3.
 rateLimitLoop :: (Monad m) => Message -> Pipe Message Message m r
 rateLimitLoop previousMessage = do

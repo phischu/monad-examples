@@ -35,7 +35,7 @@ executable stm-example
 executable shake-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <5.0,
-                       shake >=0.15.2 && <0.17
+                       shake >=0.15.2 && <0.18
   hs-source-dirs:      shake-example
   default-language:    Haskell2010
 
@@ -95,8 +95,8 @@ executable logic-example
 executable spec-example
   main-is:             Main.hs
   build-depends:       base >=4.7 && <5.0,
-                       hspec >=2.2.3 && <2.6,
-                       QuickCheck >=2.8.2 && <2.12
+                       hspec >=2.2.3 && <2.7,
+                       QuickCheck >=2.8.2 && <2.13
   hs-source-dirs:      spec-example
   default-language:    Haskell2010
 

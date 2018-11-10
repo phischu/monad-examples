@@ -1,4 +1,4 @@
-resolver: lts-12.13
+resolver: lts-12.17
 
 extra-deps:
 - distributed-process-0.7.4

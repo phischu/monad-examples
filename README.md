@@ -39,11 +39,12 @@ The ticked examples are camera-ready. The others are in progress.
 - [ ] [Process](https://hackage.haskell.org/package/distributed-process/docs/Control-Distributed-Process.html#t:Process): Distributed programming.
 - [x] [Probability](https://hackage.haskell.org/package/probability/docs/Numeric-Probability-Distribution.html#t:T): Probability distributions.
 - [x] [Scotty](https://hackage.haskell.org/package/scotty/docs/Web-Scotty.html#t:ScottyM): Web server framework.
-- [ ] [Relation](https://hackage.haskell.org/package/relational-query/docs/Database-Relational-Query-Monad-BaseType.html#t:Relation): SQL embedded in Haskell.
+- [ ] [Relation](https://hackage.haskell.org/package/relational-query/docs/Database-Relational-Monad-BaseType.html#t:Relation): SQL embedded in Haskell.
 - [x] [ST](https://hackage.haskell.org/package/base/docs/Control-Monad-ST.html#t:ST): Mutable references.
 - [x] [Logic](https://hackage.haskell.org/package/logict/docs/Control-Monad-Logic.html#t:Logic): Backtracking search.
 - [x] [Spec](https://hackage.haskell.org/package/hspec-core/docs/Test-Hspec-Core-Spec.html#t:Spec): Test specification.
-- [x] [Parser](https://hackage.haskell.org/package/attoparsec/docs/Data-Attoparsec-ByteString.html#t:Parser): Parse binary and textual data.
+- [x] [Parser](https://hackage.haskell.org/package/attoparsec/docs/Data-Attoparsec-Text.html#t:Parser): Parse binary and textual data.
 - [x] [Canvas](https://hackage.haskell.org/package/blank-canvas/docs/Graphics-Blank.html#t:Canvas): Draw on HTML 5 Canvas.
+- [ ] [Gen](https://hackage.haskell.org/package/QuickCheck/docs/Test-QuickCheck.html#t:Gen): Generate random inputs.
 
 Contributions welcome!

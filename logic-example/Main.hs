@@ -59,14 +59,14 @@ expressions numberOfFours = case numberOfFours of
 
   _ -> do
 
+    operator <- choose [Add, Subtract, Multiply, Divide]
+
     numberOfFoursLeft <- choose [1 .. numberOfFours - 1]
 
     let numberOfFoursRight = numberOfFours - numberOfFoursLeft
 
     expressionLeft <- expressions numberOfFoursLeft
     expressionRight <- expressions numberOfFoursRight
-
-    operator <- choose [Add, Subtract, Multiply, Divide]
 
     when (operator == Divide) (
       guard (not (evaluate expressionRight == 0)))

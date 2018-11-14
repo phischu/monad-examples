@@ -8,7 +8,7 @@
 module Main where
 
 import Numeric.Probability.Distribution (
-  T, uniform, pretty)
+  T, uniform, pretty, norm)
 
 
 -- | We specialize our probabilities to be rational numbers.
@@ -27,26 +27,26 @@ twentySided = uniform [1..20]
 
 -- | Get the results of two six-sided rolls and add 5.
 youRoll :: Probability Int
-youRoll = do
+youRoll = norm (do
   firstRoll <- sixSided
   secondRoll <- sixSided
-  return (firstRoll + secondRoll + 5)
+  return (firstRoll + secondRoll + 5))
 
 
 -- | Get the results of two twenty-sided rolls and take their maximum.
 enemyRolls :: Probability Int
-enemyRolls = do
+enemyRolls = norm (do
   firstRoll <- twentySided
   secondRoll <- twentySided
-  return (max firstRoll secondRoll)
+  return (max firstRoll secondRoll))
 
 
 -- | You win if your score is higher than the enemy's score.
 youWin :: Probability Bool
-youWin = do
+youWin = norm (do
   yourScore <- youRoll
   enemyScore <- enemyRolls
-  return (yourScore > enemyScore)
+  return (yourScore > enemyScore))
 
 
 -- | Print the probabilities for winning and losing.

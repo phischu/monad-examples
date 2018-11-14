@@ -34,7 +34,7 @@ canvas = do
   lineCap("round")
 
   beginPath()
-  moveTo(120.5, 130);
+  moveTo(120.5, 130)
   quadraticCurveTo(150.8, 130, 160.6, 150.5)
   quadraticCurveTo(190, 250.0, 210.5, 160.5)
   quadraticCurveTo(240, 100.5, 290, 70.5)

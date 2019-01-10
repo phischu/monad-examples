@@ -46,5 +46,6 @@ The ticked examples are camera-ready. The others are in progress.
 - [x] [Parser](https://hackage.haskell.org/package/attoparsec/docs/Data-Attoparsec-Text.html#t:Parser): Parse binary and textual data.
 - [x] [Canvas](https://hackage.haskell.org/package/blank-canvas/docs/Graphics-Blank.html#t:Canvas): Draw on HTML 5 Canvas.
 - [ ] [Gen](https://hackage.haskell.org/package/QuickCheck/docs/Test-QuickCheck.html#t:Gen): Generate random inputs.
+- [ ] [Suave](https://hackage.haskell.org/package/suavemente/docs/Web-Suavemente.html#t:Suave): Talk with a browser.
 
 Contributions welcome!
